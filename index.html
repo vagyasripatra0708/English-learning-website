@@ -2,576 +2,1196 @@
 <html lang="en">
 
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>English Learning Hub</title>
-
-    <link rel="stylesheet" href="style.css">
-
+<title>English Learning Hub</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
 
 
-    <!-- ================= NAVIGATION BAR ================= -->
+<!-- =========================================================
+     AUTHENTICATION
+========================================================= -->
 
-    <header>
+<section id="authPage" class="auth-page">
 
-        <h2>📚 English Learning Hub</h2>
+<div class="auth-wrapper">
 
-        <nav>
+<div class="auth-brand">
 
-            <a href="#home">Home</a>
+<div class="brand-logo">📚</div>
 
-            <a href="#lessons">Lessons</a>
+<span class="eyebrow">
+SMART ENGLISH LEARNING
+</span>
 
-            <a href="#tenses">Tenses</a>
+<h1>
+English Learning <span>Hub</span>
+</h1>
 
-            <a href="#practice">Practice</a>
+<p>
+Learn grammar, practice English and improve your confidence
+with interactive lessons and tests.
+</p>
 
-            <a href="#test">Mock Test</a>
+<div class="auth-features">
+<span>✓ Grammar</span>
+<span>✓ Tenses</span>
+<span>✓ Voice</span>
+<span>✓ Vocabulary</span>
+<span>✓ Mock Tests</span>
+</div>
 
-        </nav>
+</div>
 
-    </header>
 
+<div class="auth-card">
 
+<div class="auth-tabs">
 
-    <!-- ================= HOME SECTION ================= -->
+<button
+    id="loginTab"
+    type="button"
+    class="auth-tab active">
+    Login
+</button>
 
-    <section id="home" class="hero">
+<button
+    id="registerTab"
+    type="button"
+    class="auth-tab">
+    Create Account
+</button>
 
-        <div class="hero-content">
+</div>
 
-            <h1>
-                Learn English Easily 🚀
-            </h1>
 
-            <p>
-                Improve your Grammar, Vocabulary,
-                Speaking and Writing skills.
-            </p>
+<!-- LOGIN -->
 
-            <button onclick="startLearning()">
-                Start Learning
-            </button>
+<form id="loginForm">
 
-        </div>
+<div class="auth-heading">
 
-    </section>
+<span>WELCOME BACK</span>
 
+<h2>🔐 Student Login</h2>
 
+<p>
+Continue your English learning journey.
+</p>
 
-    <!-- ================= LEARNING CARDS ================= -->
+</div>
 
-    <section id="lessons" class="features">
 
-        <h2>
-            What Do You Want To Learn?
-        </h2>
+<div class="form-group">
 
+<label for="loginUsername">
+Username
+</label>
 
-        <div class="cards">
+<input
+    id="loginUsername"
+    type="text"
+    placeholder="Enter username"
+    autocomplete="username"
+    required>
 
+</div>
 
-            <!-- TENSE -->
 
-            <div class="card">
+<div class="form-group">
 
-                <h3>
-                    ⏰ Tenses
-                </h3>
+<label for="loginPassword">
+Password
+</label>
 
-                <p>
-                    Learn Present, Past and Future
-                    Tenses with simple formulas
-                    and examples.
-                </p>
+<input
+    id="loginPassword"
+    type="password"
+    placeholder="Enter password"
+    autocomplete="current-password"
+    required>
 
-                <a href="#tenses">
+</div>
 
-                    <button>
-                        Learn Tenses
-                    </button>
 
-                </a>
+<button
+    type="submit"
+    class="primary-btn full-btn">
 
-            </div>
+Login & Start Learning
 
+</button>
 
+<p
+    id="loginMessage"
+    class="form-message"
+    role="alert">
+</p>
 
-            <!-- VOICE -->
+</form>
 
-            <div class="card">
 
-                <h3>
-                    🔄 Voice
-                </h3>
+<!-- REGISTER -->
 
-                <p>
-                    Learn Active Voice and
-                    Passive Voice easily.
-                </p>
+<form id="registerForm" class="hidden">
 
-                <button onclick="showVoice()">
-                    Learn Voice
-                </button>
+<div class="auth-heading">
 
-            </div>
+<span>NEW STUDENT</span>
 
+<h2>✨ Create Your Account</h2>
 
+<p>
+Create your individual learning profile.
+</p>
 
-            <!-- GRAMMAR -->
+</div>
 
-            <div class="card">
 
-                <h3>
-                    📝 Grammar
-                </h3>
+<div class="form-group">
 
-                <p>
-                    Improve your English Grammar
-                    step by step.
-                </p>
+<label for="registerName">
+Full Name
+</label>
 
-                <button onclick="showGrammar()">
-                    Learn Grammar
-                </button>
+<input
+    id="registerName"
+    type="text"
+    placeholder="Enter your full name"
+    autocomplete="name"
+    required>
 
-            </div>
+</div>
 
 
+<div class="form-group">
 
-            <!-- VOCABULARY -->
+<label for="registerPhone">
+Phone Number
+</label>
 
-            <div class="card">
+<input
+    id="registerPhone"
+    type="tel"
+    placeholder="Enter 10-digit phone number"
+    maxlength="10"
+    inputmode="numeric"
+    required>
 
-                <h3>
-                    📖 Vocabulary
-                </h3>
+</div>
 
-                <p>
-                    Learn new English words and
-                    improve your vocabulary.
-                </p>
 
-                <button onclick="showVocabulary()">
-                    Learn Words
-                </button>
+<div class="form-group">
 
-            </div>
+<label for="registerUsername">
+Username
+</label>
 
+<input
+    id="registerUsername"
+    type="text"
+    placeholder="Create a username"
+    autocomplete="username"
+    minlength="3"
+    maxlength="20"
+    required>
 
-        </div>
+</div>
 
-    </section>
 
+<div class="form-group">
 
+<label for="registerPassword">
+Password
+</label>
 
-    <!-- ================= COMPLETE TENSES ================= -->
+<input
+    id="registerPassword"
+    type="password"
+    placeholder="Minimum 6 characters"
+    minlength="6"
+    autocomplete="new-password"
+    required>
 
-    <section id="tenses"
-             class="tenses-section">
+</div>
 
 
-        <h2>
-            ⏰ Complete Tenses
-        </h2>
+<div class="form-group">
 
+<label for="registerConfirmPassword">
+Confirm Password
+</label>
 
-        <p class="section-intro">
+<input
+    id="registerConfirmPassword"
+    type="password"
+    placeholder="Re-enter password"
+    minlength="6"
+    autocomplete="new-password"
+    required>
 
-            Learn all 12 English Tenses
-            with formulas and examples.
+</div>
 
-        </p>
 
+<button
+    type="submit"
+    class="primary-btn full-btn">
 
+Create Account
 
-        <!-- ========== PRESENT TENSE ========== -->
+</button>
 
-        <h2>
-            🟢 Present Tense
-        </h2>
 
+<p
+    id="registerMessage"
+    class="form-message"
+    role="alert">
+</p>
 
-        <div class="tense-details">
+</form>
 
 
-            <!-- SIMPLE PRESENT -->
+<div class="demo-note">
 
-            <div class="detail-card">
+<strong>Demo:</strong>
+Account information is stored in your browser
+using localStorage.
 
-                <h3>
-                    Simple Present
-                </h3>
+</div>
 
-                <p>
-                    <b>Formula:</b>
-                    Subject + V1 + Object
-                </p>
+</div>
+</div>
 
-                <p>
-                    <b>Example:</b>
-                    I play football.
-                </p>
+</section>
 
-            </div>
 
 
+<!-- =========================================================
+     MAIN WEBSITE
+========================================================= -->
 
-            <!-- PRESENT CONTINUOUS -->
+<div id="mainWebsite" class="hidden">
 
-            <div class="detail-card">
 
-                <h3>
-                    Present Continuous
-                </h3>
+<header class="navbar">
 
-                <p>
-                    <b>Formula:</b>
-                    Subject + am/is/are + V-ing
-                </p>
+<a href="#home" class="logo">
 
-                <p>
-                    <b>Example:</b>
-                    I am playing football.
-                </p>
+<span>📚</span>
 
-            </div>
+<strong>
+English Learning Hub
+</strong>
 
+</a>
 
 
-            <!-- PRESENT PERFECT -->
+<button
+    id="menuToggle"
+    type="button"
+    class="menu-toggle"
+    aria-label="Open navigation menu"
+    aria-expanded="false">
 
-            <div class="detail-card">
+☰
 
-                <h3>
-                    Present Perfect
-                </h3>
+</button>
 
-                <p>
-                    <b>Formula:</b>
-                    Subject + has/have + V3
-                </p>
 
-                <p>
-                    <b>Example:</b>
-                    I have played football.
-                </p>
+<nav id="mainNav">
 
-            </div>
+<a href="#home">Home</a>
+<a href="#lessons">Lessons</a>
+<a href="#grammar">Grammar</a>
+<a href="#voice">Voice</a>
+<a href="#tenses">Tenses</a>
+<a href="#vocabulary">Vocabulary</a>
+<a href="#practice">Practice</a>
+<a href="#paragraph">Paragraph</a>
+<a href="#test">Mock Test</a>
 
+</nav>
 
 
-            <!-- PRESENT PERFECT CONTINUOUS -->
+<div class="nav-user">
 
-            <div class="detail-card">
+<span id="navUserName">
+Student
+</span>
 
-                <h3>
-                    Present Perfect Continuous
-                </h3>
+<button
+    id="logoutBtn"
+    type="button"
+    class="logout-btn">
 
-                <p>
-                    <b>Formula:</b>
-                    Subject + has/have been + V-ing
-                </p>
+Logout
 
-                <p>
-                    <b>Example:</b>
-                    I have been playing football.
-                </p>
+</button>
 
-            </div>
+</div>
 
+</header>
 
-        </div>
 
 
+<main>
 
-        <!-- ========== PAST TENSE ========== -->
 
-        <h2>
-            🔵 Past Tense
-        </h2>
+<!-- HERO -->
 
+<section id="home" class="hero">
 
-        <div class="tense-details">
+<div class="hero-content">
 
+<span class="hero-badge">
+🌱 LEARN • PRACTICE • GROW
+</span>
 
-            <!-- SIMPLE PAST -->
+<h1>
+Learn English
+<span>With Confidence</span>
+</h1>
 
-            <div class="detail-card">
+<p>
+Master grammar, tenses, active & passive voice,
+vocabulary and sentence building through interactive
+lessons and practice.
+</p>
 
-                <h3>
-                    Simple Past
-                </h3>
+<div class="hero-buttons">
 
-                <p>
-                    <b>Formula:</b>
-                    Subject + V2 + Object
-                </p>
+<button
+    id="startLearningBtn"
+    type="button"
+    class="primary-btn">
 
-                <p>
-                    <b>Example:</b>
-                    I played football.
-                </p>
+🚀 Start Learning
 
-            </div>
+</button>
 
+<button
+    id="heroPracticeBtn"
+    type="button"
+    class="secondary-btn">
 
+🎯 Practice Now
 
-            <!-- PAST CONTINUOUS -->
+</button>
 
-            <div class="detail-card">
+</div>
 
-                <h3>
-                    Past Continuous
-                </h3>
+</div>
 
-                <p>
-                    <b>Formula:</b>
-                    Subject + was/were + V-ing
-                </p>
+</section>
 
-                <p>
-                    <b>Example:</b>
-                    I was playing football.
-                </p>
 
-            </div>
 
+<!-- DASHBOARD -->
 
+<section class="dashboard-section">
 
-            <!-- PAST PERFECT -->
+<div class="dashboard-card">
 
-            <div class="detail-card">
+<div class="dashboard-welcome">
 
-                <h3>
-                    Past Perfect
-                </h3>
+<span class="small-label">
+YOUR LEARNING SPACE
+</span>
 
-                <p>
-                    <b>Formula:</b>
-                    Subject + had + V3
-                </p>
+<h2>
+Welcome,
+<span id="studentName">Student</span>! 👋
+</h2>
 
-                <p>
-                    <b>Example:</b>
-                    I had played football.
-                </p>
+<p>
+Keep learning and improve your English score.
+</p>
 
-            </div>
+</div>
 
 
+<div class="dashboard-stats">
 
-            <!-- PAST PERFECT CONTINUOUS -->
+<div class="stat-box">
+<strong id="totalTests">0</strong>
+<span>Tests Taken</span>
+</div>
 
-            <div class="detail-card">
+<div class="stat-box">
+<strong id="bestScore">0%</strong>
+<span>Best Score</span>
+</div>
 
-                <h3>
-                    Past Perfect Continuous
-                </h3>
+<div class="stat-box">
+<strong id="averageScore">0%</strong>
+<span>Average</span>
+</div>
 
-                <p>
-                    <b>Formula:</b>
-                    Subject + had been + V-ing
-                </p>
+</div>
 
-                <p>
-                    <b>Example:</b>
-                    I had been playing football.
-                </p>
+</div>
 
-            </div>
+</section>
 
 
-        </div>
 
+<!-- LESSONS -->
 
+<section id="lessons" class="section">
 
-        <!-- ========== FUTURE TENSE ========== -->
+<div class="section-heading">
 
-        <h2>
-            🟣 Future Tense
-        </h2>
+<span>LEARNING CENTER</span>
 
+<h2>
+What Would You Like To Learn?
+</h2>
 
-        <div class="tense-details">
+<p>
+Choose a topic and learn step by step.
+</p>
 
+</div>
 
-            <!-- SIMPLE FUTURE -->
 
-            <div class="detail-card">
+<div class="learning-cards">
 
-                <h3>
-                    Simple Future
-                </h3>
+<div class="learning-card">
 
-                <p>
-                    <b>Formula:</b>
-                    Subject + will + V1
-                </p>
+<div class="learning-icon">⏰</div>
 
-                <p>
-                    <b>Example:</b>
-                    I will play football.
-                </p>
+<span class="card-number">01</span>
 
-            </div>
+<h3>English Tenses</h3>
 
+<p>
+Learn all 12 English tenses with formulas,
+uses and examples.
+</p>
 
+<button
+    type="button"
+    class="card-btn"
+    data-target="tenses">
 
-            <!-- FUTURE CONTINUOUS -->
+Learn Tenses →
 
-            <div class="detail-card">
+</button>
 
-                <h3>
-                    Future Continuous
-                </h3>
+</div>
 
-                <p>
-                    <b>Formula:</b>
-                    Subject + will be + V-ing
-                </p>
 
-                <p>
-                    <b>Example:</b>
-                    I will be playing football.
-                </p>
+<div class="learning-card">
 
-            </div>
+<div class="learning-icon">🔄</div>
 
+<span class="card-number">02</span>
 
+<h3>Active & Passive Voice</h3>
 
-            <!-- FUTURE PERFECT -->
+<p>
+Understand voice rules and convert sentences correctly.
+</p>
 
-            <div class="detail-card">
+<button
+    type="button"
+    class="card-btn"
+    data-target="voice">
 
-                <h3>
-                    Future Perfect
-                </h3>
+Learn Voice →
 
-                <p>
-                    <b>Formula:</b>
-                    Subject + will have + V3
-                </p>
+</button>
 
-                <p>
-                    <b>Example:</b>
-                    I will have played football.
-                </p>
+</div>
 
-            </div>
 
+<div class="learning-card">
 
+<div class="learning-icon">📝</div>
 
-            <!-- FUTURE PERFECT CONTINUOUS -->
+<span class="card-number">03</span>
 
-            <div class="detail-card">
+<h3>Grammar</h3>
 
-                <h3>
-                    Future Perfect Continuous
-                </h3>
+<p>
+Learn nouns, pronouns, verbs, adjectives,
+adverbs and prepositions.
+</p>
 
-                <p>
-                    <b>Formula:</b>
-                    Subject + will have been + V-ing
-                </p>
+<button
+    type="button"
+    class="card-btn"
+    data-target="grammar">
 
-                <p>
-                    <b>Example:</b>
-                    I will have been playing football.
-                </p>
+Learn Grammar →
 
-            </div>
+</button>
 
+</div>
 
-        </div>
 
+<div class="learning-card">
 
-    </section>
+<div class="learning-icon">📖</div>
 
+<span class="card-number">04</span>
 
+<h3>Vocabulary</h3>
 
-    <!-- ================= PRACTICE ================= -->
+<p>
+Build vocabulary with useful words,
+meanings and examples.
+</p>
 
-    <section id="practice"
-             class="practice">
+<button
+    type="button"
+    class="card-btn"
+    data-target="vocabulary">
 
+Learn Words →
 
-        <h2>
-            🎯 Practice Your English
-        </h2>
+</button>
 
+</div>
 
-        <p>
-            Test your knowledge with
-            interesting English questions.
-        </p>
+</div>
 
+</section>
 
-        <button onclick="startQuiz()">
 
-            Start Practice
 
-        </button>
+<!-- GRAMMAR -->
 
+<section id="grammar" class="section colored-section">
 
-    </section>
+<div class="section-heading">
 
+<span>GRAMMAR FOUNDATION</span>
 
+<h2>📝 English Grammar</h2>
 
-    <!-- ================= MOCK TEST ================= -->
+<p>
+Understand the basic building blocks of correct English.
+</p>
 
-    <section id="test"
-             class="test">
+</div>
 
 
-        <h2>
-            🏆 English Mock Test
-        </h2>
+<div class="grammar-grid">
 
+<div class="grammar-card">
+<span>01</span>
+<h3>Noun</h3>
+<p>
+A noun names a person, place, animal, thing or idea.
+</p>
+<div class="example">
+Rahul, Kolkata, dog, book, honesty
+</div>
+</div>
 
-        <p>
-            Challenge yourself and check
-            your English skills.
-        </p>
 
+<div class="grammar-card">
+<span>02</span>
+<h3>Pronoun</h3>
+<p>
+A pronoun is used instead of a noun.
+</p>
+<div class="example">
+Rahul is intelligent.
+<strong>He</strong> studies daily.
+</div>
+</div>
 
-        <button onclick="startQuiz()">
 
-            Start Mock Test
+<div class="grammar-card">
+<span>03</span>
+<h3>Verb</h3>
+<p>
+A verb shows an action or state.
+</p>
+<div class="example">
+run, eat, write, study, sleep
+</div>
+</div>
 
-        </button>
 
+<div class="grammar-card">
+<span>04</span>
+<h3>Adjective</h3>
+<p>
+An adjective describes a noun or pronoun.
+</p>
+<div class="example">
+She has a <strong>beautiful</strong> dress.
+</div>
+</div>
 
-    </section>
 
+<div class="grammar-card">
+<span>05</span>
+<h3>Adverb</h3>
+<p>
+An adverb describes a verb, adjective or another adverb.
+</p>
+<div class="example">
+He runs <strong>quickly</strong>.
+</div>
+</div>
 
 
-    <!-- ================= FOOTER ================= -->
+<div class="grammar-card">
+<span>06</span>
+<h3>Preposition</h3>
+<p>
+A preposition shows a relationship between words.
+</p>
+<div class="example">
+in, on, at, under, beside
+</div>
+</div>
 
-    <footer>
+</div>
 
-        <p>
-            © 2026 English Learning Hub
-        </p>
 
-    </footer>
+<div class="formula-box">
 
+<span class="guide-label">
+SENTENCE FORMULA
+</span>
 
+<h3>
+Subject + Verb + Object
+</h3>
 
-    <!-- ================= JAVASCRIPT ================= -->
+<p>
+Rahul → plays → football
+</p>
 
-    <script src="script.js"></script>
+</div>
 
+</section>
 
+
+
+<!-- VOICE -->
+
+<section id="voice" class="section">
+
+<div class="section-heading">
+
+<span>VOICE MASTERCLASS</span>
+
+<h2>🔄 Active & Passive Voice</h2>
+
+<p>
+Learn how sentence focus changes.
+</p>
+
+</div>
+
+
+<div class="voice-grid">
+
+<div class="voice-card">
+
+<div class="voice-icon">🟢</div>
+
+<h3>Active Voice</h3>
+
+<p>
+The subject performs the action.
+</p>
+
+<div class="voice-example">
+
+<strong>
+Ram writes a letter.
+</strong>
+
+<hr>
+
+Ram = Subject<br>
+writes = Verb<br>
+letter = Object
+
+</div>
+
+</div>
+
+
+<div class="voice-card">
+
+<div class="voice-icon">🔵</div>
+
+<h3>Passive Voice</h3>
+
+<p>
+The receiver of the action becomes the focus.
+</p>
+
+<div class="voice-example">
+
+<strong>
+A letter is written by Ram.
+</strong>
+
+<hr>
+
+letter = New Subject<br>
+is written = Passive Verb<br>
+Ram = Doer
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="rule-box">
+
+<span class="guide-label">
+BASIC FORMULA
+</span>
+
+<h3>
+Object + Helping Verb + V3 + by + Subject
+</h3>
+
+<div class="conversion">
+
+<div>
+<small>ACTIVE</small>
+<strong>
+Ram writes a letter.
+</strong>
+</div>
+
+<b>→</b>
+
+<div>
+<small>PASSIVE</small>
+<strong>
+A letter is written by Ram.
+</strong>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- TENSES -->
+
+<section id="tenses" class="section colored-section">
+
+<div class="section-heading">
+
+<span>TENSE MASTERCLASS</span>
+
+<h2>⏰ 12 English Tenses</h2>
+
+<p>
+Learn the basic formula and example of every tense.
+</p>
+
+</div>
+
+
+<div class="tenses-grid">
+
+<div class="tense-card">
+<h3>1. Present Simple</h3>
+<code>Subject + V1</code>
+<p>I play football.</p>
+</div>
+
+<div class="tense-card">
+<h3>2. Present Continuous</h3>
+<code>Subject + is/am/are + V-ing</code>
+<p>I am playing football.</p>
+</div>
+
+<div class="tense-card">
+<h3>3. Present Perfect</h3>
+<code>Subject + has/have + V3</code>
+<p>I have played football.</p>
+</div>
+
+<div class="tense-card">
+<h3>4. Present Perfect Continuous</h3>
+<code>has/have been + V-ing</code>
+<p>I have been playing.</p>
+</div>
+
+<div class="tense-card">
+<h3>5. Past Simple</h3>
+<code>Subject + V2</code>
+<p>I played football.</p>
+</div>
+
+<div class="tense-card">
+<h3>6. Past Continuous</h3>
+<code>was/were + V-ing</code>
+<p>I was playing.</p>
+</div>
+
+<div class="tense-card">
+<h3>7. Past Perfect</h3>
+<code>had + V3</code>
+<p>I had played.</p>
+</div>
+
+<div class="tense-card">
+<h3>8. Past Perfect Continuous</h3>
+<code>had been + V-ing</code>
+<p>I had been playing.</p>
+</div>
+
+<div class="tense-card">
+<h3>9. Future Simple</h3>
+<code>will + V1</code>
+<p>I will play.</p>
+</div>
+
+<div class="tense-card">
+<h3>10. Future Continuous</h3>
+<code>will be + V-ing</code>
+<p>I will be playing.</p>
+</div>
+
+<div class="tense-card">
+<h3>11. Future Perfect</h3>
+<code>will have + V3</code>
+<p>I will have played.</p>
+</div>
+
+<div class="tense-card">
+<h3>12. Future Perfect Continuous</h3>
+<code>will have been + V-ing</code>
+<p>I will have been playing.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- VOCABULARY -->
+
+<section id="vocabulary" class="section">
+
+<div class="section-heading">
+
+<span>WORD POWER</span>
+
+<h2>📖 Vocabulary</h2>
+
+<p>
+Improve your English with useful everyday words.
+</p>
+
+</div>
+
+
+<div class="learning-cards">
+
+<div class="learning-card">
+<h3>Brave</h3>
+<p>
+<strong>Meaning:</strong> Courageous
+</p>
+<p>
+Example: He is a brave boy.
+</p>
+</div>
+
+
+<div class="learning-card">
+<h3>Improve</h3>
+<p>
+<strong>Meaning:</strong> To make better
+</p>
+<p>
+Example: I want to improve my English.
+</p>
+</div>
+
+
+<div class="learning-card">
+<h3>Confident</h3>
+<p>
+<strong>Meaning:</strong> Sure about yourself
+</p>
+<p>
+Example: She is confident.
+</p>
+</div>
+
+
+<div class="learning-card">
+<h3>Useful</h3>
+<p>
+<strong>Meaning:</strong> Helpful
+</p>
+<p>
+Example: This book is useful.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- PRACTICE -->
+
+<section id="practice" class="section colored-section">
+
+<div class="section-heading">
+
+<span>PRACTICE ZONE</span>
+
+<h2>🎯 Practice English</h2>
+
+<p>
+Answer the question and check your answer.
+</p>
+
+</div>
+
+
+<div class="practice-box">
+
+<div class="question">
+Q. Choose the correct sentence:
+</div>
+
+
+<button
+    type="button"
+    class="option"
+    data-correct="false">
+
+A. He go to school every day.
+
+</button>
+
+
+<button
+    type="button"
+    class="option"
+    data-correct="true">
+
+B. He goes to school every day.
+
+</button>
+
+
+<button
+    type="button"
+    class="option"
+    data-correct="false">
+
+C. He going to school every day.
+
+</button>
+
+
+<button
+    type="button"
+    class="option"
+    data-correct="false">
+
+D. He gone to school every day.
+
+</button>
+
+
+<p
+    id="practiceResult"
+    class="result"
+    role="status">
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- PARAGRAPH -->
+
+<section id="paragraph" class="section">
+
+<div class="section-heading">
+
+<span>WRITING PRACTICE</span>
+
+<h2>📄 Paragraph Writing</h2>
+
+<p>
+Read and learn from a simple English paragraph.
+</p>
+
+</div>
+
+
+<div class="formula-box">
+
+<h3>
+My Daily Routine
+</h3>
+
+<p>
+I wake up early in the morning. I brush my teeth and
+take a bath. Then I have breakfast and go to college.
+I attend my classes and study different subjects.
+In the evening, I return home and complete my homework.
+At night, I have dinner and go to bed.
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- MOCK TEST -->
+
+<section id="test" class="section colored-section">
+
+<div class="section-heading">
+
+<span>EXAM ZONE</span>
+
+<h2>🧠 Mock Test</h2>
+
+<p>
+Take a quick English test.
+</p>
+
+</div>
+
+
+<div class="practice-box">
+
+<form id="mockTest">
+
+
+<div class="question">
+1. She ___ to school every day.
+</div>
+
+<label class="option">
+<input type="radio" name="q1" value="go">
+Go
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="goes">
+Goes
+</label>
+
+<label class="option">
+<input type="radio" name="q1" value="going">
+Going
+</label>
+
+
+
+<div class="question">
+2. They ___ playing cricket now.
+</div>
+
+<label class="option">
+<input type="radio" name="q2" value="is">
+Is
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="are">
+Are
+</label>
+
+<label class="option">
+<input type="radio" name="q2" value="was">
+Was
+</label>
+
+
+
+<div class="question">
+3. Choose the passive voice:
+</div>
+
+<label class="option">
+<input type="radio" name="q3" value="a">
+Ram writes a letter.
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="b">
+A letter is written by Ram.
+</label>
+
+<label class="option">
+<input type="radio" name="q3" value="c">
+Ram writing a letter.
+</label>
+
+
+<br>
+
+<button
+    type="submit"
+    class="primary-btn">
+
+Submit Test
+
+</button>
+
+
+<p
+    id="testResult"
+    class="result"
+    role="status">
+</p>
+
+</form>
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<footer>
+
+<p>
+📚 English Learning Hub © 2026
+</p>
+
+<p>
+Learn • Practice • Grow
+</p>
+
+</footer>
+
+</div>
+<script src="script.js"></script>
 </body>
-
 </html>
